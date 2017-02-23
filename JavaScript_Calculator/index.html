@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> JavaScript Calculator </title>
+	<link rel="stylesheet" type="text/css" href="CSS_and_JS/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script
+  		src="https://code.jquery.com/jquery-3.1.1.js"
+  		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  		crossorigin="anonymous">
+  	</script>
+    <script type="text/javascript" src="CSS_and_JS/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="calculator.js"> </script>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+<div id="wrapper"> 
+
+<div id="displayPrevious">  </div>	
+
+<div id="displayCurrent">   </div>
+	
+<table id="inputButtons">
+
+	<tr>
+		<td width="25%"> <button class="btn btn-danger buttonStyle" onclick="allClear()">  AC </button> </td>
+		<td width="25%"> <button class="btn btn-danger buttonStyle" onclick="clearEntry()">  CE </button> </td>
+		<td width="25%"> <button class="btn btn-info buttonStyle" onclick="addOperators('/')">  / </button>  </td>
+		<td width="25%"> <button class="btn btn-info buttonStyle" onclick="addOperators('x')">  x </button>  </td>	
+	</tr>
+
+	<tr>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(7)" > 7 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(8)"> 8 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(9)"> 9 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addOperators('+')"> + </button> </td>	
+	</tr>
+
+	<tr>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(4)"> 4 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(5)"> 5 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(6)"> 6 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addOperators('-')"> - </button> </td>	
+	</tr>
+
+	<tr>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(3)"> 3 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(2)"> 2 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addText(1)"> 1 </button> </td>
+		<td rowspan="2"> <button class="btn btn-info buttonStyle" id="equals" onclick="doCalculation()"> = </button> </td>	
+	</tr>
+
+	<tr>
+		<td colspan="2"> <button class="btn btn-info buttonStyle" style="width: 80%" onclick="addText(0)"> 0 </button> </td>
+		<td> <button class="btn btn-info buttonStyle" onclick="addDecimal('.')"> . </button> </td>
+	</tr>
+  
+</table>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

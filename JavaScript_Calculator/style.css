@@ -1,0 +1,83 @@
+body
+{  
+  background-color: silver;
+  text-align: center;
+}
+
+#wrapper
+{
+  margin: auto;
+  margin-top: 12%;
+  min-width: 300px;
+  max-width: 25%;
+}
+
+#displayPrevious
+{
+  margin: auto;
+  min-width: 300px;
+  max-width: 60%;
+  min-height: 25px;
+  max-height: 3%;
+  border-top: solid;
+  border-right: solid;
+  border-left: solid;
+  text-align: right;
+  padding-right: 2%;
+  font-family: "Time New Roman";
+  font-size: 18px;
+}
+
+#displayCurrent
+{
+  margin: auto;
+  min-width: 300px;
+  max-width: 60%;
+  min-height: 50px;
+  max-height: 5%;
+  border-right: solid;
+  border-left: solid;
+  font-family: "Time New Roman";
+  font-size: 28px;
+  text-align: right;
+  padding-top: 2%;
+  padding-right: 2%;
+}
+
+
+#inputButtons
+{
+  margin: auto;
+  min-width: 300px;
+  max-width: 80%;
+  min-height: 400px;
+  max-height: 35%;
+  border-style: solid;
+  border-color: black;   
+}
+
+#equals
+{
+  height: 80%;
+  font-size: 28px;
+}
+
+.buttonStyle
+{
+  background-color: rgb(66, 134, 244);
+  font-size: 20px;
+  border-style: solid;
+  border-color: gray;
+}
+
+table tr td button
+{
+  font-size: 20px;
+}
+
+table td
+{
+  /*border-style: solid;
+  border-color: gray;*/
+  text-align: center;  
+}
