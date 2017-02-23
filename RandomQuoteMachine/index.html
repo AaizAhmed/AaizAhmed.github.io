@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Random Quote Machine </title>
+	<link rel="stylesheet" type="text/css" href="CSS_and_JS/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script
+  		src="https://code.jquery.com/jquery-3.1.1.js"
+  		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  		crossorigin="anonymous">
+  	</script>
+  	<script type="text/javascript" src="CSS_and_JS/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="quote.js"></script>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+<div id="box"> 	
+	
+  <p id="quote">  </p>
+  <p id="author">		</p>
+
+	<script> randomQuote(); </script>
+
+	<button type="button" id="new-quote" onclick="randomQuote()"> 
+    <h4> New Quote </h4>     
+	</button>
+
+ <button type="button"  class="btn btn-primary" id="tweet" onclick="tweetIt()"> 
+     Tweet      
+	</button>
+  
+  </div>
+
+</div>
+
+</body>
+</html>

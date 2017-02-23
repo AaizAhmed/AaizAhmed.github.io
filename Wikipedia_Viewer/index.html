@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Wikipedia Viewer </title>
+	<link rel="stylesheet" type="text/css" href="CSS_and_JS/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script
+  		src="https://code.jquery.com/jquery-3.1.1.js"
+  		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  		crossorigin="anonymous">
+  	</script>
+    <script type="text/javascript" src="CSS_and_JS/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="wikipedia.js"> </script>
+	
+</head>
+
+<body>
+	
+<div class="container-fluid">
+
+<div id="randomArticle">
+	<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">
+	<button class="btn btn-info"> <strong> Get A Random Article </strong> </button>
+	</a>
+</div>	
+
+<div id="httpError"> </div>
+  
+<div class="centerIt" id="searchDiv">
+    <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Very_Basic/search-100.png" id="searchIcon" onclick="addInputBox()" width="100px">
+</div>
+
+<div class="centerIt hide" id="inputWrapper">	
+
+<input type="text" name="search" id="inputBox" placeholder="Type Here!">
+
+</div>
+
+<div class="clearBtn" id="closeIconWrapper"></div>
+
+<div id="displayWiki">
+	
+</div>
+	
+</div>
+
+</body>
+
+
+</html>

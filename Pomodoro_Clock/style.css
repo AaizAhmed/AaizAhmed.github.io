@@ -1,0 +1,52 @@
+body
+{
+	background-color: gray;
+	text-align: center;
+	//color: white
+}
+
+#quote
+{
+	margin: auto;
+	margin-top: 8%;
+	font-size: 40px;
+	font-weight: bold;
+	font-family: "Comic Sans MS";
+	//border-style: solid;
+}
+
+#timeLength
+{
+	margin: auto;
+	margin-top: 2%;
+	//padding-left: 5%;
+	width: 350px;
+	font-size: 20px;
+	font-family: "Comic Sans MS";
+	//border-style: solid;
+    border-color: black;
+	text-align: center;
+}
+
+table tr td
+{
+	//border-style: solid;
+	padding-top: 5%;
+}
+
+.hide
+{
+	display: none;
+}
+
+#timeDisplay
+{
+	margin: auto;
+	margin-top: 3%;
+	width: 300px;
+	font-size: 40px;
+	font-family: "Comic Sans MS";
+	//font-weight: bold;
+	border-style: solid;
+	border-radius: 100%;
+}

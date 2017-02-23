@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Pomodoro Clock </title>
+	<link rel="stylesheet" type="text/css" href="CSS_and_JS/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script
+  		src="https://code.jquery.com/jquery-3.1.1.js"
+  		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  		crossorigin="anonymous">
+  	</script>
+    <script type="text/javascript" src="CSS_and_JS/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="pomodoro.js"> </script>
+
+</head>
+
+<body>
+	
+<div class="container-fluid">
+
+<div id="quote"> The harder I work the luckier I get </div>
+
+<table id="timeLength"> 
+
+	<tr>
+		<th> Break Length </th>
+		<th> Session Length </th>
+	</tr>	
+
+	<tr>
+		<td>
+			<button class="btn btn-info" onclick="increment(0)"> + </button>
+			<h2 id="break">	05	</h2>
+			<button class="btn btn-info" onclick="decrement(0)"> - </button>
+		</td>
+
+		<td>		
+			<button class="btn btn-info" onclick="increment(1)"> + </button>
+			<h2 id="session">	25	</h2>
+			<button class="btn btn-info" onclick="decrement(1)"> - </button>
+		</td>
+	</tr>
+
+</table>
+
+<div id="timeDisplay"> 
+
+	<span id="info"> Session </span>	<br> 
+	<span id="timeLeft">  </span> 
+</div>
+
+<div style="margin: auto; margin-top: 2%;">
+
+	<button class="btn btn-primary" id="start" onclick="start()"> Start </button>
+	<button class="btn btn-primary" id="stop" onclick="stop()"> Stop </button>
+	<button class="btn btn-danger" style="margin-left: 2%;" onclick="reset()"> Reset </button>
+</div>
+
+
+</div>
+
+</body>
+
+</html>

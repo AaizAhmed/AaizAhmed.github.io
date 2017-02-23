@@ -1,0 +1,107 @@
+body
+{
+  background-color: #ffcc99;
+}
+
+#httpError
+{  
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
+#randomArticle
+{
+  margin-top: 15%;
+  text-align: center;  
+}
+
+.hide
+{
+  display: none;
+}
+
+.btn
+{
+  font-size: 20px;
+  color: black;
+}
+
+a:link
+{
+  text-decoration: none;
+}
+
+.makeBox
+{
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  padding: 10px 10px 10px 15px;
+  background-color: white;
+  color: black;
+  font-size: 16px;  
+}
+
+.makeBox:Hover 
+{
+  width: 82%;
+  font-size: 18px;
+  border-left-style: solid;
+  border-left-color: blue;
+  border-left-width: 5px;  
+}
+
+.makeBox h4 
+{ 
+  font-size: 20px;
+  font-weight: bold; 
+}
+
+.makeBox:Hover h4 
+{ 
+  font-size: 22px;
+}
+
+img:Hover
+{
+  width: 125px;
+}
+
+.centerIt
+{ 
+  margin: auto;
+  margin-top: 1%;
+  text-align: center;
+}
+
+input[name=search] 
+{
+  text-align: left;
+  width: 300px;
+  box-sizing: border-box;
+  border: 4px solid blue;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: gray;
+  color: white;
+   
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[name=search]:focus 
+{
+  width: 100%;
+  border-color: green;
+}
+
+.clearBtn
+{
+  text-align: center;
+  margin: auto;
+  margin-top: 0.5%;
+}
