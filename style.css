@@ -1,0 +1,52 @@
+body
+{
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  text-align: center;
+}
+
+#httpError
+{  
+  font-size: 30px;
+  color: red;
+}
+
+#geoInfo
+{
+  margin-top: 8%;
+  font-family: "Time New Roman";
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#temp
+{
+  width: 300px;
+  margin: auto;
+  margin-top: 2%;
+  border-color: black;
+  border-style: solid;
+  padding-top: 5px;
+  background-color: none;
+  color: none;
+}
+
+#tempVal
+{ 
+  font-size: 30px;  
+}
+
+#details
+{
+  padding-top: 5px;
+  margin: auto;
+  margin-top: 2%;
+  width: 375px;
+  border-color: black;
+  border-style: solid;
+  font-size: 20px;
+}
