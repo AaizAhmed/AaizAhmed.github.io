@@ -11,6 +11,11 @@ function addMore()
 	}
 }
 
+function roundTwo(x)    
+{     
+  return Number(Math.round(x +'e2')+'e-2');     
+}
+
 function doCalculation()
 {
 
