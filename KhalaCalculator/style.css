@@ -1,0 +1,54 @@
+body
+{  
+  background-color: silver;
+  text-align: center;
+  font-family: "Time New Roman";  
+}
+
+#intro
+{
+  margin-top: 5%;
+}
+
+#wrapper
+{
+  margin: auto;
+  margin-top: 3%;
+  max-height: 100%;
+  min-width: 80%;
+  max-width: 90%;
+}
+
+#inputDisplay
+{
+  margin: auto;
+  min-width: 80%;
+  min-height: 400px;
+  max-height: 100%;
+  border-color: black;
+  font-family: "Time New Roman"; 
+}
+
+#total
+{
+  margin-top: 1%;
+  padding-bottom: 3%;
+}
+
+#result
+{
+  font-size: 28px;
+}
+
+table tr td 
+{
+  border-style: solid;
+  font-size: 20px;
+}
+
+table tr th
+{
+  border-style: solid;
+  text-align: center;  
+  font-size: 20px;
+}
