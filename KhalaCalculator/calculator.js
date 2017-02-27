@@ -13,7 +13,8 @@ function addMore()
 
 function roundTwo(x)    
 {     
-  return Number(Math.round(x +'e2')+'e-2');     
+  // Number() can also be used in place of parseFloat()
+  return parseFloat(Math.round(x +'e2')+'e-2');     
 }
 
 function doCalculation()
@@ -35,8 +36,6 @@ function doCalculation()
            {
            		alert("Wrong input: Row " + r + " Col 2");
            		return;
-           		console.log("Test passed!");
-           		console.log(num);
            }    
            
            if (num != "")
@@ -53,12 +52,12 @@ function doCalculation()
 
            		num += tmp;
 
-           		total += roundTwo(num);
+              total += roundTwo(num);
            }
        }
     }
 
-    $("#result").html("<u> Total: " + total + "</u>");
+    $("#result").html("<u> Total: " + total.toFixed(2) + "</u>");
 }
 
 $(document).ready( function()
