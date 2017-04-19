@@ -25,7 +25,7 @@ var quotes = [
 
    "Michelle has sexy lips and a great figure, we would love to do a photoshoot with her. | Playboy",
    
-   "Playboy edition featuring Michelle will sell like hot cake! | Playboy",
+   "Playboy edition featuring Michelle will sell like hot cakes! | Playboy",
    
    "Michelle is very kind hearted. | Friend",
    
@@ -49,9 +49,10 @@ function randomQuote()
 function tweetIt () 
 {
   var text = document.getElementById('quote').innerText;
+  var author = document.getElementById('author').innerText;
   var tweetUrl = 'https://twitter.com/share?text=' +
     encodeURIComponent(text) +
-    '&url=' + '\nMichelle';
+    '&url=' + author;
   
   window.open(tweetUrl);
 }
