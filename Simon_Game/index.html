@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Simon Game</title>
+	<link rel="stylesheet" type="text/css" href="CSS_and_JS/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script
+  		src="https://code.jquery.com/jquery-3.1.1.js"
+  		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  		crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="CSS_and_JS/jquery-3.1.1.js"></script>
+</head>
+
+<body> 
+	
+<div class="container-fluid">
+
+<div class="outter">
+
+	<div class="inner">
+
+		<div class="row-margin">
+		<div class="inline box red top-left unclickable" id="one"> </div>
+		<div class="inline box blue top-right unclickable" id="two"> </div>
+		</div>
+
+		<div class="row-margin">
+		<div class="inline box green bottom-left unclickable" id="three"> </div>
+		<div class="inline box yellow bottom-right unclickable" id="four"> </div>
+		</div>
+
+	</div>
+
+	<div class="circle">
+
+		<div class="name"> Simon 
+		</div>
+
+		<div class="row-margin">
+
+		<div class="display inline">
+			<h1 class="score"> -- </h1>
+			<h3 class="caption"> Count </h3>
+		</div>
+
+		<div class="btn-box inline"> 
+			<div class="round-btn clickable" id="start"> </div>
+			<h3 class="caption"> Start </h3>
+		</div>
+
+		<div class="btn-box inline"> 
+			<div class="round-btn led clickable" id="strict"> </div>
+			<h3 class="caption"> Strict </h3>
+			<div class="led" id="mode"> </div>
+		</div>
+
+		</div>
+
+		<div class="row-margin">
+			<h3 class="caption inline"> OFF </h3>
+			<div class="switch-slot inline">
+				<div class="switch-btn inline" id="switch"> </div>
+			</div>
+			<h3 class="caption inline"> ON </h3>
+		</div>
+		
+	</div>
+
+</div>
+
+</div>
+<script type="text/javascript" src="Simon.js"></script>
+</body>
+
+</html>
