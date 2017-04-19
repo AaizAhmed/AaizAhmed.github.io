@@ -5,43 +5,49 @@ background-image: url(http://www.themesrefinery.net/wp-content/uploads/2014/06/w
 //background-repeat: no-repeat; 
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;    
+ul 
+{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;    
 }
 
 li {
   float: left;
 }
 
-#follow {  
+#follow 
+{  
   float: right;
   margin: 2% 2% 2.5% 0%;
   background-color: #9932CC;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-  }
+li a 
+{
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 20px;
+   text-decoration: none;
+}
 
-li a:hover {
+li a:hover 
+{
    background-color: #111;
 }
 
-.thumb {
-    border-style: solid;
-    border-width: 5px;
-    margin: 5% 0px 0px 15%;  
-    width: 25%;
+.thumb 
+{
+  border-style: solid;
+  border-width: 5px;
+  margin: 5% 0px 0px 15%;  
+  width: 25%;
 }
 
-#about {
+#about 
+{
   margin: 3% 0px 0px 5%;
   color: blue;
   font-family: Handwriting;
