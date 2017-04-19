@@ -11,7 +11,7 @@ var quotes = [
 
    "Michelle is a beautiful gal with sexy lips and attractive eyes. | Baltimore Sun",
 
-   "Michelle’s smile will make your day. | Anonymous", 
+   "Michelle's smile will make your day. | Anonymous", 
 
    "Michelle has a great sense of humor. Sometimes I can't stop laughing. | Aaiz",
 
