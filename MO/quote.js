@@ -1,7 +1,7 @@
 
 /*
 	Author: Aaiz
-	Date: January 16, 2017
+	Date: April 19, 2017
 */
 var quotes = [
 
