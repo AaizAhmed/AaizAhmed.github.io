@@ -1,0 +1,61 @@
+body 
+{ 
+	/*background: gray;*/
+	color: red;
+}
+
+#box
+{
+	text-align: center;
+	margin: 5% 10% 0px 10%;
+	border-color: black;
+	border-style: solid;
+}
+
+#name
+{
+	text-align: center;
+	margin: auto;
+	margin-top: 10%;
+	font-family: Castellar, "Time New Roman";
+	font-size: 30px; 
+	color: purple;
+	font-weight: bold;
+}
+
+#quote
+{
+ 	margin-top: 3%;
+	text-align: center;
+	font-size: 35px; 
+	font-family: Papyrus;
+}
+
+#author
+{
+	text-align: right; 
+	margin-right: 5%;
+	font-size: 22px; 
+	font-family: Baskerville;
+}
+
+#new-quote
+{	
+	text-align: center;	
+	border-radius: 8%;
+	border-style: solid;
+	margin-bottom: 2%; 
+	background-color: white;
+	border-color: purple;
+	font-family: "Time New Roman";
+	color: purple;
+}
+
+#tweet
+{		
+	border-radius: 8%;
+	border-style: solid;
+	margin-left: 3%; 
+	border-color: black;
+	color: white;
+}
