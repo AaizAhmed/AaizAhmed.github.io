@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Calculate Physics Formuli </title>
+	<link rel="stylesheet" type="text/css" href="CSS_and_JS/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script
+  		src="https://code.jquery.com/jquery-3.1.1.js"
+  		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  		crossorigin="anonymous">
+  	</script>
+    <script type="text/javascript" src="CSS_and_JS/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="Physics.js"> </script>
+
+</head>
+
+<body>
+	
+<div class="container-fluid">
+
+	<div id="name">
+		Physics Formuli
+	</div>
+
+	<div id="list">
+
+		<form>
+
+		  <input type="radio" name="formula" value="force" onclick="display()"> Force <br>
+		  <input type="radio" name="formula" value="force_attraction" onclick="display()"> Force Attraction <br>
+			  
+		  <input type="radio" name="formula" value="temp_celsius" onclick="display()"> Temperature to Celsius <br>  
+		  <input type="radio" name="formula" value="temp_fahrenheit" onclick="display()"> Temperature to Fahrenheit <br>  
+
+		  <input type="radio" name="formula" value="kinetic_energy" onclick="display()"> Kinetic Energy <br>  
+		  <input type="radio" name="formula" value="potential_energy" onclick="display()"> Potential Energy <br>  	
+
+		</form>
+
+	</div>
+
+
+<!-- ADD DETAILS ABOUT THE FORMULAS HERE -->
+
+	<div class="hide center" id="force">
+			
+		<p class="title"> Calculate Force: </p>
+
+		<table>
+
+			<tr>
+				<th width="50%"> </th>
+				<th width="50%"> </th>
+			</tr>
+			
+			<tr>
+				<td> Enter Mass: </td>
+				<td> <input type="text" name="mass_force"> </td>
+			</tr>
+
+			<tr>
+				<td> Enter Acceleration: </td>
+				<td> <input type="text" name="acc_force"> </td>
+			</tr>
+
+		</table>
+
+		<button type="submit" onclick="force()" style="font-size: 20px;"> Calculate </button>
+
+		<span class="result" id="force_result"> </span>
+
+	</div>
+
+	<div class="hide center" id="force_attraction">
+			
+		<p class="title"> Calculate Force of Attraction: </p>
+
+		<table>
+
+			<tr>
+				<th width="50%"> </th>
+				<th width="50%"> </th>
+			</tr>
+			
+			<tr>
+				<td> Enter Mass One: </td>
+				<td> <input type="text" name="mass_one"> </td>
+			</tr>
+
+			<tr>
+				<td> Enter Mass Two: </td>
+				<td> <input type="text" name="mass_two"> </td>
+			</tr>
+
+			<tr>
+				<td> Enter Radius: </td>
+				<td> <input type="text" name="radius"> </td>
+			</tr>
+
+		</table>
+
+		<button type="submit" onclick="force_attraction()" style="font-size: 20px;"> Calculate </button>
+
+		<span class="result" id="force_attr_result"> </span>
+
+	</div>
+
+	<div class="hide center" id="temp_celsius">
+			
+		<p class="title"> Convert Temperature to Celsius: </p>
+
+		<table>
+
+			<tr>
+				<th width="55%"> </th>
+				<th width="45%"> </th>
+			</tr>
+			
+			<tr>
+				<td> Enter Fahrenheit Temperature: </td>
+				<td> <input type="text" name="temp_fah"> </td>
+			</tr>
+
+		</table>
+
+		<button type="submit" onclick="temp_celsius()" style="font-size: 20px;"> Calculate </button>
+
+		<span class="result" id="temp_cel_result"> </span>
+
+	</div>
+
+	<div class="hide center" id="temp_fahrenheit">
+			
+		<p class="title"> Convert Temperature to Fahrenheit: </p>
+
+		<table>
+
+			<tr>
+				<th width="55%"> </th>
+				<th width="45%"> </th>
+			</tr>
+			
+			<tr>
+				<td> Enter Celsius Temperature: </td>
+				<td> <input type="text" name="temp_cel"> </td>
+			</tr>
+
+		</table>
+
+		<button type="submit" onclick="temp_fahrenheit()" style="font-size: 20px;"> Calculate </button>
+
+		<span class="result" id="temp_fah_result"> </span>
+
+	</div>
+
+	<div class="hide center" id="kinetic_energy">
+			
+		<p class="title"> Calculate Kinetic Energy: </p>
+
+		<table>
+
+			<tr>
+				<th width="50%"> </th>
+				<th width="50%"> </th>
+			</tr>
+			
+			<tr>
+				<td> Enter Mass: </td>
+				<td> <input type="text" name="ke_mass"> </td>
+			</tr>
+
+			<tr>
+				<td> Enter Velocity: </td>
+				<td> <input type="text" name="ke_velocity"> </td>
+			</tr>
+
+		</table>
+
+		<button type="submit" onclick="kinetic_energy()" style="font-size: 20px;"> Calculate </button>
+
+		<span class="result" id="ke_result"> </span>
+
+	</div>
+
+	<div class="hide center" id="potential_energy">
+			
+		<p class="title"> Calculate Potential Energy: </p>
+
+		<table>
+
+			<tr>
+				<th width="50%"> </th>
+				<th width="50%"> </th>
+			</tr>
+			
+			<tr>
+				<td> Enter Mass: </td>
+				<td> <input type="text" name="pe_mass"> </td>
+			</tr>
+
+			<tr>
+				<td> Enter Height: </td>
+				<td> <input type="text" name="pe_height"> </td>
+			</tr>
+
+		</table>
+
+		<button type="submit" onclick="potential_energy()" style="font-size: 20px;"> Calculate </button>
+
+		<span class="result" id="pe_result"> </span>
+
+	</div>
+			
+
+</div>
+
+</body>
+</html>
