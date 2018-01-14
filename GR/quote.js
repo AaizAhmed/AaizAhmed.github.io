@@ -32,7 +32,9 @@ var quotes = [
    "Gabriela is very smart and one of my best student. | Professor",
    
    "Gabriela can do anything she wants in life, she is funny, smart and confident. " +
-   "She may even have a great future is public service. | New York Times" 
+   "She may even have a great future is public service. | New York Times",
+
+   "Gabriela likes to dance and hangout with friends. | Anonymous" 
 
 ];
 
