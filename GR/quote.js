@@ -7,6 +7,8 @@ var quotes = [
 
 	 "Gabriela is a great girl and has a big heart. | Friend",
 
+   "Gabriela likes to dance and hangout with friends. | Anonymous",
+
    "Gabriela is a very caring person and wants to help out. | Classmate",
 
    "Gabriela is a beautiful gal with sexy lips and attractive eyes. | Baltimore Sun",
@@ -32,9 +34,7 @@ var quotes = [
    "Gabriela is very smart and one of my best student. | Professor",
    
    "Gabriela can do anything she wants in life, she is funny, smart and confident. " +
-   "She may even have a great future is public service. | New York Times",
-
-   "Gabriela likes to dance and hangout with friends. | Anonymous" 
+   "She may even have a great future is public service. | New York Times" 
 
 ];
 
