@@ -195,19 +195,3 @@ function error()
 }
 
 
-// $("document").ready (function ()
-// {   
-//   if (window.location.protocol != "https:")
-//    {
-//             var msg = "For Current Location you need to use HTTPS.<br> Click here: ";
-//                 msg += "<a target='_blank' href='https://codepen.io/AaizAhmed/full/PWbKNY/'>Local Weather</a>";
-
-//           $("#httpError").html(msg);
-//             defaultWeather();
-//         } 
-//       else 
-//       { 
-//             getLocation(); 
-//       }
-
-// } );
