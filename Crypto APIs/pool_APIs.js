@@ -119,25 +119,50 @@ function getNanoData(data)
    console.log(data);
 }
 
-function flyPool ()
+function flyPool (api, callFunction)
 {
    var address = 't1dFiLozmDYPFRvxG6sA1PmAedxVmjJLNzA/';
    var url     = 'https://api-zcash.flypool.org/miner/:';
-   url        += address + "payouts";
+   
+   var urlStr  = url + address + api;
+
+   $.getJSON(urlStr, callFunction);
+
+   // Get Payouts
+   // urlStr = url + address + "payouts";
+
+   // $.getJSON(urlStr, getFlyPayouts);
+
+}
+
+function getFlyStats(data) 
+{
+   console.log(data);
+
+   var arr   = data["data"];
+   var table = document.getElementById("fly");
+
+   var azHash = arr["currentHashrate"]/1000;
+   azHash = roundTwo(azHash) + " KH/s";
+
+   addRow( table, "azminer", azHash );
 
 
-   $.getJSON(url, getFlyPayouts);
+   var unconfirmed = arr["unconfirmed"]/100000000;
+
+   addRow( table, "Unconfirmed", unconfirmed );
+
+
+
+   addRow( table, "--------", "--------" );
 }
 
 function getFlyPayouts(data)
 {
    // console.log(data);
 
-   var arr = data["data"];
-
-   // Get table for the fly pool
+   var arr   = data["data"];
    var table = document.getElementById("fly");
-
 
    for (var idx = 0; idx < Math.min(arr.length, 7); idx++) 
    {
@@ -147,7 +172,7 @@ function getFlyPayouts(data)
        amount = amount/100000000;
        date   = new Date(date*1000);
 
-       addRow( table, date.toLocaleString(), amount );
+       addRow( table, date.toDateString(), amount );
    }
 
 }
@@ -155,4 +180,5 @@ function getFlyPayouts(data)
 
 miningPoolHub();
 // nanoPool();
-flyPool();
+flyPool("currentStats", getFlyStats);
+flyPool("payouts", getFlyPayouts);
