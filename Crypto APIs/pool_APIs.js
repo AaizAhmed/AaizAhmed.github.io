@@ -209,32 +209,32 @@ function flyPool ()
    } );
 
    // Get Info about Rounds
-   urlStr = url + address + "rounds";
+   // urlStr = url + address + "rounds";
 
-   $.getJSON(urlStr, function(data)
-   {
-      // console.log(data);
+   // $.getJSON(urlStr, function(data)
+   // {
+   //    // console.log(data);
 
-      var arr   = data["data"];
-      var table = document.getElementById("fly");
-      var sum   = 0;
+   //    var arr   = data["data"];
+   //    var table = document.getElementById("fly");
+   //    var sum   = 0;
 
-      for (var idx = 0; idx < arr.length; idx++) 
-      {
-          var block  = arr[idx]["block"];
-          var amount = arr[idx]["amount"];
+   //    for (var idx = 0; idx < arr.length; idx++) 
+   //    {
+   //        var block  = arr[idx]["block"];
+   //        var amount = arr[idx]["amount"];
 
-          sum   += amount;
-          amount = amount/100000000;
+   //        sum   += amount;
+   //        amount = amount/100000000;
           
-          addRow( table, block, amount );
-      }
+   //        addRow( table, block, amount );
+   //    }
 
-      addRow( table, "Total", sum/100000000 );
+   //    addRow( table, "Total", sum/100000000 );
 
-      addRow( table, "--------", "--------" );
+   //    addRow( table, "--------", "--------" );
 
-   } );
+   // } );
 }
 
 
