@@ -82,9 +82,11 @@ function getHubData(data)
    var confirmed = data["balance"]["confirmed"];
    var unconfirmed = data["balance"]["unconfirmed"];
    var recent = data["recent_credits_24hours"]["amount"];
+   var total = confirmed + unconfirmed;
 
    addRow( table, "Confirmed", confirmed );
    addRow( table, "Unconfirmed", unconfirmed );
+   addRow( table, "Total", total );
    addRow ( table, "Last 24 Hours", recent);
 
    addRow( table, "--------", "--------" );
@@ -119,11 +121,14 @@ function nanoPool ()
 
       var confirmed = arr["balance"];
       var unconfirmed = arr["unconfirmed_balance"];
+      var total = parseFloat(confirmed) + parseFloat(unconfirmed);
+      
       var azHash = roundTwo( arr["hashrate"]/1000 ) + " KH/s";
 
       addRow( table, "azminer", azHash );
       addRow( table, "Confirmed", confirmed );
       addRow( table, "Unconfirmed", unconfirmed );
+      addRow( table, "Total", total );
 
       addRow( table, "--------", "--------" );
 
@@ -154,7 +159,7 @@ function flyPool ()
 
    $.getJSON(urlStr, function(data)
    {
-      console.log(data);
+      // console.log(data);
 
       var arr   = data["data"];
       var table = document.getElementById("fly");
