@@ -25,6 +25,12 @@
   return parseFloat(Math.round(x +'e2')+'e-2');     
 }
 
+ function round(x, y)    
+ {     
+  // Number() can also be used in place of parseFloat()
+  return parseFloat(Math.round(x +'e'+y)+'e-'+y);     
+}
+
 
 function miningPoolHub ()
 {
@@ -101,23 +107,43 @@ function getHubData(data)
 function nanoPool ()
 {
    var address = 't1dFiLozmDYPFRvxG6sA1PmAedxVmjJLNzA';
-   var url     = 'https://api.nanopool.org/v1/zec/user/:';
+   var url     = 'https://api.nanopool.org/v1/zec/user/';
    url        += address;
 
-   // var tag = document.createElement("script");
-   // tag.src = url;
+   $.getJSON(url, function(data)
+   {
+      // console.log(data);
 
-   // //Adding JS to the HTML header
-   // document.getElementsByTagName("head")[0].appendChild(tag);
+      var arr   = data["data"];
+      var table = document.getElementById("nano");
 
-   $.getJSON(url, getNanoData);
+      var confirmed = arr["balance"];
+      var unconfirmed = arr["unconfirmed_balance"];
+      var azHash = roundTwo( arr["hashrate"]/1000 ) + " KH/s";
+
+      addRow( table, "azminer", azHash );
+      addRow( table, "Confirmed", confirmed );
+      addRow( table, "Unconfirmed", unconfirmed );
+
+      addRow( table, "--------", "--------" );
+
+      url = "https://api.nanopool.org/v1/zec/approximated_earnings/" + arr["hashrate"];
+
+      $.getJSON(url, function(data)
+      {
+         var coinsHour = data["data"]["hour"]["coins"];
+         var coinsDay  = data["data"]["day"]["coins"];
+
+         addRow (table, "Coins per Hour", round(coinsHour, 8));
+         addRow (table, "Coins per Day", round(coinsDay, 8));
+
+         addRow( table, "--------", "--------" );
+      } );
+
+   } );
 
 }
 
-function getNanoData(data)
-{
-   console.log(data);
-}
 
 function flyPool ()
 {
@@ -128,7 +154,7 @@ function flyPool ()
 
    $.getJSON(urlStr, function(data)
    {
-      // console.log(data);
+      console.log(data);
 
       var arr   = data["data"];
       var table = document.getElementById("fly");
@@ -145,6 +171,14 @@ function flyPool ()
       addRow( table, "Unpaid", unpaid/100000000 );
       addRow( table, "Total", total );
 
+      addRow( table, "--------", "--------" );
+
+      var coins = arr["coinsPerMin"]*60;
+      addRow (table, "Coins per Hour", round(coins, 8));
+      
+      coins = coins*24;
+      addRow (table, "Coins per Day", round(coins, 8));
+      
       addRow( table, "--------", "--------" );
 
    } );
@@ -187,25 +221,25 @@ function flyPool ()
 
       for (var idx = 0; idx < arr.length; idx++) 
       {
-          var block   = arr[idx]["block"];
-          var amount = arr[idx]["amount"]/100000000;
+          var block  = arr[idx]["block"];
+          var amount = arr[idx]["amount"];
 
-          sum += amount;
+          sum   += amount;
+          amount = amount/100000000;
           
           addRow( table, block, amount );
       }
 
-      addRow( table, "Total", sum );
+      addRow( table, "Total", sum/100000000 );
 
       addRow( table, "--------", "--------" );
 
    } );
-
 }
 
 
 // Run the functions
-flyPool();
+// flyPool();
 miningPoolHub();
-// nanoPool();
+nanoPool();
 
