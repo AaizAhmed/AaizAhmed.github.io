@@ -127,12 +127,6 @@ function flyPool (api, callFunction)
    var urlStr  = url + address + api;
 
    $.getJSON(urlStr, callFunction);
-
-   // Get Payouts
-   // urlStr = url + address + "payouts";
-
-   // $.getJSON(urlStr, getFlyPayouts);
-
 }
 
 function getFlyStats(data) 
@@ -145,12 +139,13 @@ function getFlyStats(data)
    var azHash = arr["currentHashrate"]/1000;
    azHash = roundTwo(azHash) + " KH/s";
 
-   addRow( table, "azminer", azHash );
-
-
    var unconfirmed = arr["unconfirmed"]/100000000;
+   var unpaid = arr["unpaid"]/100000000;
 
+
+   addRow( table, "azminer", azHash );
    addRow( table, "Unconfirmed", unconfirmed );
+   addRow( table, "Unpaid", unpaid );
 
 
 
