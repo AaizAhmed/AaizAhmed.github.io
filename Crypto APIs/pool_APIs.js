@@ -239,7 +239,7 @@ function flyPool ()
 
 
 // Run the functions
-// flyPool();
+flyPool();
 miningPoolHub();
 nanoPool();
 
