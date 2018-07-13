@@ -6,7 +6,7 @@
     function addRow(table, item, value)
     {
 
-    // Create an empty <tr> element and add it to the 1st position of the table:
+    // Create an empty <tr> element and add it to the table:
     var row = table.insertRow();
 
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
@@ -32,7 +32,7 @@
 }
 
 
-function miningPoolHub ()
+function miningPoolHub()
 {
  var key = '&api_key=f99acd02310748f3453e4ee02565dfc6eae6ae15942d483ab8e7add0ab2a878a';
  var url = 'https://zcash.miningpoolhub.com/index.php?page=api&action=getdashboarddata';
@@ -43,15 +43,23 @@ function miningPoolHub ()
 
   //Adding JS to the HTML header
   document.getElementsByTagName("head")[0].appendChild(tag);
-
 }
-
 
 function getHubData(data)   
 {
    // console.log(data);
 
    data = data["getdashboarddata"]["data"];
+
+   // Do not show this Pool info on webpage if the hashrate is zero.
+   if ( data["raw"]["personal"]["hashrate"] == 0 )
+   {
+      $("#h_hub").addClass("hide");
+      $("#hub").addClass("hide");
+
+      // No pool info needed so just return.
+      return;
+   }
 
    var netHashrates = data["network"];
 
@@ -106,7 +114,7 @@ function getHubData(data)
 }
 
 
-function nanoPool ()
+function nanoPool()
 {
    var address = 't1dFiLozmDYPFRvxG6sA1PmAedxVmjJLNzA';
    var url     = 'https://api.nanopool.org/v1/zec/user/';
@@ -116,7 +124,18 @@ function nanoPool ()
    {
       // console.log(data);
 
-      var arr   = data["data"];
+      var arr = data["data"];
+
+      // Do not show this Pool info on webpage if the hashrate is zero.
+      if ( arr["hashrate"] == 0 )
+      {
+         $("#h_nano").addClass("hide");
+         $("#nano").addClass("hide");
+
+         // No pool info needed so just return.
+         return;
+      }
+
       var table = document.getElementById("nano");
 
       var confirmed = arr["balance"];
@@ -150,7 +169,7 @@ function nanoPool ()
 }
 
 
-function flyPool ()
+function flyPool()
 {
    var address = 't1dFiLozmDYPFRvxG6sA1PmAedxVmjJLNzA/';
    var url     = 'https://api-zcash.flypool.org/miner/:';
@@ -161,7 +180,18 @@ function flyPool ()
    {
       // console.log(data);
 
-      var arr   = data["data"];
+      var arr = data["data"];
+
+      // Do not show this Pool info on webpage if the hashrate is zero.
+      if ( arr["currentHashrate"] == 0 )
+      {
+         $("#h_fly").addClass("hide");
+         $("#fly").addClass("hide");
+
+         // No pool info needed so just return.
+         return;
+      }
+
       var table = document.getElementById("fly");
 
       var azHash = arr["currentHashrate"]/1000;
@@ -184,6 +214,41 @@ function flyPool ()
       coins = coins*24;
       addRow (table, "Coins per Day", round(coins, 8));
       
+      addRow( table, "--------", "--------" );
+
+   } );
+
+   // Get Info about Rounds
+   urlStr = url + address + "rounds";
+
+   $.getJSON(urlStr, function(data)
+   {
+      // console.log(data);
+
+      var arr   = data["data"];
+      var table = document.getElementById("fly");
+      var sum   = 0;
+
+      for (var idx = 0; idx < arr["length"]; idx++) 
+      {
+          // var block  = arr[idx]["block"];
+          var amount = arr[idx]["amount"];
+
+          sum   += amount;
+          // amount = amount/100000000;
+          
+          // addRow( table, block, amount );
+      }
+
+      var len = arr["length"];
+      sum = sum/100000000;
+
+      var avg = sum/len;
+
+      addRow( table, "Total", sum );
+      addRow( table, "Rounds", len );
+      addRow( table, "Average", round(avg, 8) );
+
       addRow( table, "--------", "--------" );
 
    } );
@@ -213,33 +278,6 @@ function flyPool ()
 
    } );
 
-   // Get Info about Rounds
-   // urlStr = url + address + "rounds";
-
-   // $.getJSON(urlStr, function(data)
-   // {
-   //    // console.log(data);
-
-   //    var arr   = data["data"];
-   //    var table = document.getElementById("fly");
-   //    var sum   = 0;
-
-   //    for (var idx = 0; idx < arr.length; idx++) 
-   //    {
-   //        var block  = arr[idx]["block"];
-   //        var amount = arr[idx]["amount"];
-
-   //        sum   += amount;
-   //        amount = amount/100000000;
-          
-   //        addRow( table, block, amount );
-   //    }
-
-   //    addRow( table, "Total", sum/100000000 );
-
-   //    addRow( table, "--------", "--------" );
-
-   // } );
 }
 
 
@@ -247,4 +285,3 @@ function flyPool ()
 flyPool();
 miningPoolHub();
 nanoPool();
-
