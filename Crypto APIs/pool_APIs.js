@@ -141,6 +141,7 @@ function nanoPool()
       var confirmed = arr["balance"];
       var unconfirmed = arr["unconfirmed_balance"];
       var total = parseFloat(confirmed) + parseFloat(unconfirmed);
+      total = round(total, 8);
       
       var azHash = roundTwo( arr["hashrate"]/1000 ) + " KH/s";
 
