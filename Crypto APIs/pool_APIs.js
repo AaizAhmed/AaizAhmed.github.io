@@ -183,7 +183,7 @@ function flyPool()
       var arr = data["data"];
 
       // Do not show this Pool info on webpage if the hashrate is zero.
-      if ( arr["currentHashrate"] == 0 )
+      if ( arr["currentHashrate"] == null )
       {
          $("#h_fly").addClass("hide");
          $("#fly").addClass("hide");
