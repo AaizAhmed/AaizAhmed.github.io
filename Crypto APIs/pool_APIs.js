@@ -279,6 +279,31 @@ function flyPool()
 
    } );
 
+   // Network Info 
+   urlStr = "https://api-zcash.flypool.org/networkStats";
+
+   $.getJSON(urlStr, function(data)
+   {
+      // console.log(data);
+
+      var table = document.getElementById("fly");
+
+      var netHash = data["data"]["hashrate"]/1000000;
+      netHash = roundTwo(netHash) + " MH/s";
+
+      var diff = data["data"]["difficulty"]/1000000;
+      diff = roundTwo(diff) + " Million";
+
+      var usd = "$" + data["data"]["usd"];
+      
+      addRow( table, "Network ", netHash );
+      addRow( table, "Difficulty", diff );
+      addRow( table, "Price", usd );
+
+      addRow( table, "--------", "--------" );
+
+   } );
+
 }
 
 
