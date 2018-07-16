@@ -1,21 +1,20 @@
 /*
-    Author: Aaiz N Ahmed
-    Data: July 11, 2018
-    */
+   Author: Aaiz N Ahmed
+   Data: July 11, 2018
+*/
 
-    function addRow(table, item, value)
-    {
+function addRow(table, item, value)
+{
+   // Create an empty <tr> element and add it to the table:
+   var row = table.insertRow();
 
-    // Create an empty <tr> element and add it to the table:
-    var row = table.insertRow();
+   // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+   var cell1 = row.insertCell(0);
+   var cell2 = row.insertCell(1);
 
-    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-
-    // Add some text to the new cells:
-    cell1.innerHTML = item;
-    cell2.innerHTML = value; 
+   // Add some text to the new cells:
+   cell1.innerHTML = item;
+   cell2.innerHTML = value; 
  }
 
 
@@ -25,24 +24,24 @@
   return parseFloat(Math.round(x +'e2')+'e-2');     
 }
 
- function round(x, y)    
- {     
-  // Number() can also be used in place of parseFloat()
-  return parseFloat(Math.round(x +'e'+y)+'e-'+y);     
+function round(x, y)    
+{     
+   // Number() can also be used in place of parseFloat()
+   return parseFloat(Math.round(x +'e'+y)+'e-'+y);     
 }
 
 
 function miningPoolHub()
 {
- var key = '&api_key=f99acd02310748f3453e4ee02565dfc6eae6ae15942d483ab8e7add0ab2a878a';
- var url = 'https://zcash.miningpoolhub.com/index.php?page=api&action=getdashboarddata';
- url += key + "&callback=getHubData";
+   var key = '&api_key=f99acd02310748f3453e4ee02565dfc6eae6ae15942d483ab8e7add0ab2a878a';
+   var url = 'https://zcash.miningpoolhub.com/index.php?page=api&action=getdashboarddata';
+   url += key + "&callback=getHubData";
 
- var tag = document.createElement("script");
- tag.src = url;
+   var tag = document.createElement("script");
+   tag.src = url;
 
-  //Adding JS to the HTML header
-  document.getElementsByTagName("head")[0].appendChild(tag);
+   //Adding JS to the HTML header
+   document.getElementsByTagName("head")[0].appendChild(tag);
 }
 
 function getHubData(data)   
