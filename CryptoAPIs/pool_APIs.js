@@ -51,14 +51,14 @@ function getHubData(data)
    data = data["getdashboarddata"]["data"];
 
    // Do not show this Pool info on webpage if the hashrate is zero.
-   if ( data["raw"]["personal"]["hashrate"] == 0 )
-   {
-      $("#h_hub").addClass("hide");
-      $("#hub").addClass("hide");
+   // if ( data["raw"]["personal"]["hashrate"] == 0 )
+   // {
+   //    $("#h_hub").addClass("hide");
+   //    $("#hub").addClass("hide");
 
-      // No pool info needed so just return.
-      return;
-   }
+   //    // No pool info needed so just return.
+   //    return;
+   // }
 
    var netHashrates = data["network"];
 
@@ -203,14 +203,14 @@ function flyPool()
       var arr = data["data"];
 
       // Do not show this Pool info on webpage if the hashrate is zero.
-      if ( arr["currentHashrate"] == null )
-      {
-         $("#h_fly").addClass("hide");
-         $("#fly").addClass("hide");
+      // if ( arr["currentHashrate"] == null )
+      // {
+      //    $("#h_fly").addClass("hide");
+      //    $("#fly").addClass("hide");
 
-         // No pool info needed so just return.
-         return;
-      }
+      //    // No pool info needed so just return.
+      //    return;
+      // }
 
       var table = document.getElementById("fly");
 
