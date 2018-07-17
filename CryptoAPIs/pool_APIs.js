@@ -321,9 +321,8 @@ function getNetworkStats()
    });
 }
 
-
 // Run the functions
-nanoPool();
 flyPool();
 miningPoolHub();
+nanoPool();
 getNetworkStats();
