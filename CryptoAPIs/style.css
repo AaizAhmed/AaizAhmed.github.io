@@ -1,0 +1,43 @@
+body
+{
+  background-color: #ff5599;
+}
+
+#wrapper
+{
+  margin-top: 5%;
+  text-align: center;  
+  font-family: "Time New Roman"; 
+  font-size: 35px;
+}
+
+.centerIt
+{ 
+  margin: auto;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  text-align: center;
+}
+
+table tr td 
+{
+  border-style: solid;
+  border-color: black;
+}
+
+table tr th
+{
+  border: solid;
+  text-align: center;  
+}
+
+h2
+{
+  font-size: 60px; 
+}
+
+.hide
+{
+  display: none;
+}
+
