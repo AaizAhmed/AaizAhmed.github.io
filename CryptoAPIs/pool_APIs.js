@@ -311,11 +311,27 @@ function getNetworkStats()
       var diff = data["data"]["difficulty"]/1000000;
       diff = roundTwo(diff) + " Million";
 
-      var usd = "$" + data["data"]["usd"];
+      var usd = data["data"]["usd"];
       
       addRow( table, "Network ", netHash );
       addRow( table, "Difficulty", diff );
-      addRow( table, "Price", usd );
+      addRow( table, "Price", "$"+usd );
+
+      addRow( table, "--------", "--------" );
+
+      var hashrate = 200000;
+      var fees = 0.01;
+      var blockReward = 10;
+      var difficulty = data["data"]["difficulty"];
+      var perMin = 60;
+
+      var num = ((hashrate*(1-fees))/((difficulty)*8192))*blockReward*perMin;
+
+      addRow( table, "Earnings Per Min"  , round(num, 6)       );
+      addRow( table, "Earnings Per Hour" , round(num*60, 6)    );
+      addRow( table, "Earnings Per Day"  , round(num*60*24, 6) );
+
+      addRow( table, "In Dollars", "$"+roundTwo(num*usd)+" | $"+roundTwo(num*60*usd)+" | $"+roundTwo(num*60*24*usd) );
 
       addRow( table, "--------", "--------" );
    });
