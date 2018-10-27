@@ -319,7 +319,7 @@ function getNetworkStats()
 
       addRow( table, "--------", "--------" );
 
-      var hashrate = 200000;
+      var hashrate = 300000;
       var fees = 0.01;
       var blockReward = 10;
       var difficulty = data["data"]["difficulty"];
