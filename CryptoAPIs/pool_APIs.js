@@ -236,38 +236,6 @@ function flyPool()
       
       addRow( table, "--------", "--------" );
 
-      // Get Info about Rounds
-      urlStr = url + address + "rounds";
-
-      $.getJSON(urlStr, function(data)
-      {
-         // console.log(data);
-
-         var arr = data["data"];
-         var sum = 0;
-
-         for (var idx = 0; idx < arr["length"]; idx++) 
-         {
-             // var block  = arr[idx]["block"];
-             var amount = arr[idx]["amount"];
-
-             sum   += amount;
-             // amount = amount/100000000;
-             
-             // addRow( table, block, amount );
-         }
-
-         var len = arr["length"];
-         sum = sum/100000000;
-
-         var avg = sum/len;
-
-         addRow( table, "Total", sum );
-         addRow( table, "Rounds", len );
-         addRow( table, "Average", round(avg, 8) );
-
-         addRow( table, "--------", "--------" );
-
          // Payout information
          urlStr = url + address + "payouts";
 
@@ -290,7 +258,6 @@ function flyPool()
 
             addRow( table, "--------", "--------" );            
          });
-      });
    });
 }
 
@@ -319,19 +286,10 @@ function getNetworkStats()
 
       addRow( table, "--------", "--------" );
 
-      var hashrate = 300000;
-      var fees = 0.01;
-      var blockReward = 10;
-      var difficulty = data["data"]["difficulty"];
-      var perMin = 60;
+      // Get estimated earnings from WhatToMine
+      var link = '<a href="https://whattomine.com/coins/166-zec-equihash?utf8=%E2%9C%93&hr=300000.0&p=3720.0&fee=1.0&cost=0.12&hcost=13000&commit=Calculate" target="_blank">WhatToMine</a>'
 
-      var num = ((hashrate*(1-fees))/((difficulty)*8192))*blockReward*perMin;
-
-      addRow( table, "Earnings Per Min"  , round(num, 6)       );
-      addRow( table, "Earnings Per Hour" , round(num*60, 6)    );
-      addRow( table, "Earnings Per Day"  , round(num*60*24, 6) );
-
-      addRow( table, "In Dollars", "$"+roundTwo(num*usd)+" | $"+roundTwo(num*60*usd)+" | $"+roundTwo(num*60*24*usd) );
+      addRow( table, "Estimates", link );      
 
       addRow( table, "--------", "--------" );
    });
