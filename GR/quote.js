@@ -1,7 +1,8 @@
 
 /*
-	Author: Aaiz
-	Date: April 19, 2017
+	Author:  Aaiz
+	Date:    April 19, 2017
+        Updated: Jan 14, 2018 for Mi Amor :)
 */
 var quotes = [
 
