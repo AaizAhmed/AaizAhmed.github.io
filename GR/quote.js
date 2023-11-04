@@ -40,7 +40,7 @@ var quotes = [
 
 function randomQuote() 
 {
-  var index = Math.floor( Math.random() * (quotes.length - 0) ) + 0;
+  var index = Math.floor(Math.random() * quotes.length);
 
   var quoteText = quotes[index].split('|');
 
